@@ -1,51 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:19:23 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/09 11:46:31 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:00:09 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c);
-int	ft_isalpha(char c);
-int	ft_isdigit(char c);
-
-int	ft_isalpha(char c)
+int	ft_memset(char *str)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+	int	i;
 
-int	ft_isdigit(char c)
-{
-	if (c >= 48 && c <= 57)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (1);
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
-}
-
-int	ft_isalnum(char c)
-{
-	if ((ft_isalpha(c) != 0) || (ft_isdigit(c) != 0))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (i);
 }
