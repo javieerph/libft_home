@@ -13,7 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <unistd.h>
 #include <stdlib.h>
 
 int ft_isalpha(char c);
@@ -26,4 +25,7 @@ void	*ft_memset(void *s, int c, size_t len);
 void	ft_bzero(void *s, size_t len);
 void	*ft_memcpy(void *dest, const void *src, size_t len);
 void	*ft_memmove(void *dest, const void *src, size_t len);
+char	*ft_strcpy(char *dest, const char *src);
+size_t	ft_strlcat(char *dest, const char *src,
+	size_t destsize);
 #endif
