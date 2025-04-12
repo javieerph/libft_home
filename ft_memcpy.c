@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 09:57:26 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/12 09:57:26 by ejavier-         ###   ########.fr       */
+/*   Created: 2025/04/08 12:19:23 by ejavier-          #+#    #+#             */
+/*   Updated: 2025/04/09 13:00:09 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int len)
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-	unsigned char	*ptr;
-	unsigned int			i;
+	unsigned int	i;
+	char	*d;
+	char	*s;
 
-	ptr = (unsigned char *)s;
+	d = (char *)dest;
+	s = (char *)src;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		ptr[i] = 0;
+		*d = *s;
+		d++;
+		s++;
 		i++;
 	}
+		
+	return (dest);
 }
