@@ -9,12 +9,13 @@
 /*   Updated: 2025/04/12 10:27:03 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, unsigned int len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	char	*s;
 	char	*d;
-	unsigned int	i;
+	size_t	i;
 
 	s = (char *)src;
 	d = (char *)dest;

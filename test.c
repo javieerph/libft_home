@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 12:19:23 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/09 12:58:48 by ejavier-         ###   ########.fr       */
+/*   Created: 2025/04/12 17:23:08 by ejavier-          #+#    #+#             */
+/*   Updated: 2025/04/12 17:23:08 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-int	ft_strlen(const *str)
+int main(void)
 {
-	int	i;
+    char c ;
+    int result;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    c = 'A';
+    result = ft_isalnum(c);
+    if (result == 1)
+    {
+        printf("The character '%c' is alphanumeric.\n", c);
+    }
+    else
+    {
+        printf("The character '%c' is not alphanumeric.\n", c);
+    }
+    return (0);
 }
