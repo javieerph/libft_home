@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 19:04:56 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/13 19:04:56 by ejavier-         ###   ########.fr       */
+/*   Created: 2025/04/14 21:25:42 by ejavier-          #+#    #+#             */
+/*   Updated: 2025/04/14 21:25:42 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *strchr(const char *s, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
-    
-    i = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] == (char)c)
-            return (char *)(s + i);
-        i++;
-    }
-    if (c == '\0')
-    {
-        return (char *)(s + i);
-    }
-    else
-    {
-        return NULL;
-    }
+	size_t  i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n -1)
+	{
+		if (s1[i] != s2[i])
+		{
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		}
+		i++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
