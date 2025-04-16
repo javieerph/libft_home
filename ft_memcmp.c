@@ -31,11 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
         return (*(str1 + i) - *(str2 + i));
     }	
 }
-#include <stdio.h>
-int main(void)
-{
-char bloque1[] = "Hola";
-char bloque2[] = "Hola";
-int resultado = ft_memcmp(bloque1, bloque2, 4);
-printf("El resultado de la comparación es: %d\n", resultado);
-}
