@@ -25,10 +25,11 @@ char	*ft_strnstr(const char *haystack, const char *needle,
 	{
 		h = (char *)haystack;
 		l = len;
-		while (*haystack && *needle && *haystack == *needle && len-- > 0)
+		while (*haystack && *needle && *haystack == *needle && len > 0)
 		{
 			haystack++;
 			needle++;
+			len--;
 		}
 		if (!*needle)
 			return (h);
@@ -37,17 +38,4 @@ char	*ft_strnstr(const char *haystack, const char *needle,
 		len = --l;
 	}
 	return (NULL);
-}
-#include <stdio.h>
-int main(void)
-{
-    char haystack[] = "Hello, world!";
-    char needle[] = "world";
-    size_t len = 20;
-    char *result = ft_strnstr(haystack, needle, len);
-    if (result != NULL)
-        printf("Found: %s\n", result);
-    else
-        printf("Not found\n");
-    return 0;
 }
