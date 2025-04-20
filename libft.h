@@ -25,7 +25,7 @@ void	*ft_memset(void *s, int c, size_t len);
 void	ft_bzero(void *s, size_t len);
 void	*ft_memcpy(void *dest, const void *src, size_t len);
 void	*ft_memmove(void *dest, const void *src, size_t len);
-char	*ft_strcpy(char *dest, const char *src);
+size_t  ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src,
 	size_t destsize);
 int	ft_toupper(int c);
@@ -39,4 +39,5 @@ char	*ft_strnstr(const char *haystack, const char *needle,
 	size_t len);
 int	ft_atoi(const char *str);
 void	*ft_calloc(size_t nelem, size_t elsize);
+char	*ft_strdup(const char *s);
 #endif

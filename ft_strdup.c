@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 20:39:30 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/17 20:39:30 by ejavier-         ###   ########.fr       */
+/*   Created: 2025/04/20 09:58:23 by ejavier-          #+#    #+#             */
+/*   Updated: 2025/04/20 09:58:23 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_calloc(size_t nelem, size_t elsize)
+char	*ft_strdup(const char *s)
 {
-	void *ptr;
+	size_t	len;
+	char	*cpy;
 
-    if (nelem == 0 || elsize == 0)
-    {
-        ptr = malloc(1);
-		if (ptr == NULL)
-			return (NULL);
-		return (ptr);
-    }    
-	ptr = malloc(nelem * elsize);
-	if (ptr == NULL)
+	len = ft_strlen(s);
+	cpy = (char *)malloc(sizeof(char) * (len + 1));
+	if (cpy == NULL)
 		return (NULL);
-	ft_bzero(ptr, (nelem * elsize));
-	return (ptr);
+    ft_strlcpy(cpy, s, len + 1);
+	return (cpy);
 }
