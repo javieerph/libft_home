@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 19:04:56 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/13 19:04:56 by ejavier-         ###   ########.fr       */
+/*   Created: 2025/04/20 19:54:14 by ejavier-          #+#    #+#             */
+/*   Updated: 2025/04/20 19:54:14 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char *ft_strmapi(char const *s, char (*f)(unsigned
+    int, char))
 {
-    int i;
+    char	*ret;
+    int		i;
     
+    if (!s || !f)
+        return (NULL);
+    ret = (char *)ft_calloc((ft_strlen(s) + 1), sizeof(char));
     i = 0;
-    while (s[i] != '\0')
+    while (*(s + i))
     {
-        if (s[i] == (char)c)
-            return (char *)(s + i);
+        ret[i] = (*f)(i, *(s + i));
         i++;
     }
-    if (c == '\0')
-    {
-        return (char *)(s + i);
-    }
-    else
-    {
-        return NULL;
-    }
+    return (ret);
 }
