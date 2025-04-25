@@ -6,14 +6,14 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 21:25:42 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/14 21:25:42 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/25 02:35:11 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)

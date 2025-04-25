@@ -6,38 +6,37 @@
 #    By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/21 19:40:11 by ejavier-          #+#    #+#              #
-#    Updated: 2025/04/21 19:40:11 by ejavier-         ###   ########.fr        #
+#    Updated: 2025/04/25 03:47:32 by ejavier-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Nombre del programa
 NAME = libft.a
 
-# Compilador y banderas
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-# Archivos fuente y objetos
-SRCS = $(wildcard ft_*.c)
+SRCS = ft_isdigit.c ft_memset.c ft_strdup.c ft_strncmp.c ft_atoi.c\
+ft_isprint.c ft_putchar_fd.c ft_striteri.c ft_strnstr.c ft_bzero.c\
+ft_itoa.c ft_putendl_fd.c ft_strjoin.c ft_strrchr.c ft_calloc.c\
+ft_memchr.c ft_putnbr_fd.c ft_strlcat.c ft_strtrim.c ft_isalnum.c\
+ft_memcmp.c ft_putstr_fd.c ft_strlcpy.c ft_substr.c ft_isalpha.c\
+ft_memcpy.c ft_split.c ft_strlen.c ft_tolower.c ft_isascii.c\
+ft_memmove.c ft_strchr.c ft_strmapi.c ft_toupper.c
+
 OBJS = $(SRCS:.c=.o)
 
-# Comandos básicos
 AR = ar rcs
 RM = rm -f
 
-# Regla principal
 all: $(NAME)
 
 $(NAME): $(OBJS)
-    $(AR) $(NAME) $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-# Regla para limpiar archivos objeto
 clean:
-    $(RM) $(OBJS)
+	$(RM) $(OBJS)
 
-# Regla para limpiar todo (objetos y la biblioteca)
 fclean: clean
-    $(RM) $(NAME)
+	$(RM) $(NAME)
 
-# Regla para recompilar todo
 re: fclean all

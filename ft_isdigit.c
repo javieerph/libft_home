@@ -6,11 +6,11 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 08:49:58 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/09 12:37:41 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/25 04:34:55 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 	{

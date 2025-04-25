@@ -6,13 +6,13 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:19:23 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/09 11:46:31 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/25 04:36:38 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	if ((ft_isalpha(c) != 0) || (ft_isdigit(c) != 0))
 	{

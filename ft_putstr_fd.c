@@ -6,12 +6,12 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:49:24 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/21 18:49:24 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/24 23:52:35 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
