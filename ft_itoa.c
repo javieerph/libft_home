@@ -6,7 +6,7 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:08:41 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/24 23:20:17 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/25 05:18:14 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,6 +22,8 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	len = ft_intlen(n);
 	ret = (char *)ft_calloc((len + 1), sizeof(char));
+	if (!ret)
+		return (NULL);
 	if (n == 0)
 		ret[0] = '0';
 	if (n < 0)

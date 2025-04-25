@@ -6,7 +6,7 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 19:56:37 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/25 02:41:46 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/25 05:14:27 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,8 +23,8 @@ char	*ft_strrchr(const char *s, int c)
 		if (s[i] == (char)c)
 		{
 			last = (char *)(s + i);
-			i++;
 		}
+		i++;
 	}
 	if ((char)c == '\0')
 	{

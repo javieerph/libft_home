@@ -6,14 +6,15 @@
 /*   By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 16:08:31 by ejavier-          #+#    #+#             */
-/*   Updated: 2025/04/25 04:05:33 by ejavier-         ###   ########.fr       */
+/*   Updated: 2025/04/25 08:34:48 by ejavier-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	word_count(char const *s, char c);
-static char	*word(char const *s, char c);
-static void	free_array(char **array, int i);
+static int			word_count(char const *s, char c);
+static char			*word(char const *s, char c);
+static void			free_array(char **array, int i);
+static const char	*skip_delimiters(const char *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -24,21 +25,17 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = word_count(s, c);
-	array = (char **)ft_calloc((words + 1), sizeof(char));
+	array = (char **)ft_calloc((words + 1), sizeof(char *));
 	if (!array)
 		return (NULL);
 	i = 0;
 	while (*s && i < words)
 	{
-		if (*s != c)
-		{
-			array[i] = word(s, c);
-			if (!array[i++])
-				return (free_array(array, i - 1), NULL);
-			while (*s && *s != c)
-				s++;
-		}
-		else
+		s = skip_delimiters(s, c);
+		array[i] = word(s, c);
+		if (!array[i++])
+			return (free_array(array, i - 1), NULL);
+		while (*s && *s != c)
 			s++;
 	}
 	return (array);
@@ -47,17 +44,22 @@ char	**ft_split(char const *s, char c)
 static int	word_count(char const *s, char c)
 {
 	int	count;
+	int	word;
 
 	count = 0;
+	word = 0;
 	while (*s)
 	{
-		if (ft_strchr(s, c))
+		if (*s != c && word == 0)
 		{
+			word = 1;
 			count++;
-			s++;
 		}
-		else
-			s++;
+		else if (*s == c)
+		{
+			word = 0;
+		}
+		s++;
 	}
 	return (count);
 }
@@ -80,7 +82,6 @@ static char	*word(char const *s, char c)
 		word[i] = s[i];
 		i++;
 	}
-	word[len] = 0;
 	return (word);
 }
 
@@ -89,4 +90,11 @@ static void	free_array(char **array, int i)
 	while (i >= 0)
 		free(array[i--]);
 	free(array);
+}
+
+static const char	*skip_delimiters(const char *s, char c)
+{
+	while (*s && *s == c)
+		s++;
+	return (s);
 }
