@@ -6,13 +6,13 @@
 #    By: ejavier- <ejavier-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/21 19:40:11 by ejavier-          #+#    #+#              #
-#    Updated: 2025/04/25 03:47:32 by ejavier-         ###   ########.fr        #
+#    Updated: 2025/04/26 10:46:26 by ejavier-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_isdigit.c ft_memset.c ft_strdup.c ft_strncmp.c ft_atoi.c\
